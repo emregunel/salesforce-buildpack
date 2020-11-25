@@ -109,6 +109,8 @@ debug "data-plans: $data_plans"
 
 # Set path for Dev Hub auth file
 devHubAuthFile=$BUILD_DIR/$vendorDir/sfdxurl
+echo $devHubAuthFile
+echo $SFDX_DEV_HUB_AUTH_URL
 
 # Review App or CI
 if [ "$STAGE" == "" ]; then
