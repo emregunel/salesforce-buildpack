@@ -241,7 +241,7 @@ fi
 sfdx force:auth:sfdxurl:store -f $scratchOrgAuthFile -a $TARGET_SCRATCH_ORG_ALIAS
 
 echo "Deleting Review app org $TARGET_SCRATCH_ORG_ALIAS" ...
-sfdx force:org:delete -p -u $TARGET_SCRATCH_ORG_ALIAS --loglevel=error
+#sfdx force:org:delete -p -u $TARGET_SCRATCH_ORG_ALIAS --loglevel=error
 EOF
 
   chmod +x $raOrgDeleteScript
