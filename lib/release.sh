@@ -118,8 +118,13 @@ if [ ! "$STAGE" == "" ]; then
         invokeCmd "sfdx force:package:version:promote --package \"$SFDX_PACKAGE_VERSION_ID\" --noprompt"
 
       fi
-
+      
+      log "Org List Below:"
+      
+      invokeCmd "sfdx force:org:list"
+     
       log "Installing package version $SFDX_PACKAGE_NAME ..."
+      
 
       invokeCmd "sfdx force:package:install --noprompt --package \"$SFDX_PACKAGE_VERSION_ID\" -u \"$TARGET_SCRATCH_ORG_ALIAS\" --wait 1000 --publishwait 1000"
 
