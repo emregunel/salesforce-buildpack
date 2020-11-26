@@ -165,9 +165,9 @@ then
     log "Creating new package version (this may take awhile) ..."
 
     # create package version
-    CMD="sfdx force:package:version:create --package $SFDX_PACKAGE_ID --wait 100 --installationkeybypass --json | jq -r .result.SubscriberPackageVersionId"
-    SFDX_PACKAGE_VERSION_ID=$(eval $CMD)
-    debug "SFDX_PACKAGE_VERSION_ID: $SFDX_PACKAGE_VERSION_ID"
+    #CMD="sfdx force:package:version:create --package $SFDX_PACKAGE_ID --wait 100 --installationkeybypass --json | jq -r .result.SubscriberPackageVersionId"
+    #SFDX_PACKAGE_VERSION_ID=$(eval $CMD)
+    #debug "SFDX_PACKAGE_VERSION_ID: $SFDX_PACKAGE_VERSION_ID"
 
   else
 
@@ -242,6 +242,7 @@ sfdx force:auth:sfdxurl:store -f $scratchOrgAuthFile -a $TARGET_SCRATCH_ORG_ALIA
 
 echo "Deleting Review app org $TARGET_SCRATCH_ORG_ALIAS" ...
 #sfdx force:org:delete -p -u $TARGET_SCRATCH_ORG_ALIAS --loglevel=error
+sfdx force:org:list
 EOF
 
   chmod +x $raOrgDeleteScript
